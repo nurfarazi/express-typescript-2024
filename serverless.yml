@@ -15,7 +15,7 @@ provider:
 
 functions:
   app:
-    handler: dist/lambda.handler
+    handler: dist/server.handler
     events:
       - http:
           path: /

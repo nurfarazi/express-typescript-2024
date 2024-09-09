@@ -162,9 +162,9 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/express-app-test-delete-me/dev/1725881940100-2024-09-09T11:39:00.100Z/express-app-test-delete-me.zip"
+          "S3Key": "serverless/express-app-test-delete-me/dev/1725884866459-2024-09-09T12:27:46.459Z/express-app-test-delete-me.zip"
         },
-        "Handler": "dist/lambda.handler",
+        "Handler": "dist/server.handler",
         "Runtime": "nodejs20.x",
         "FunctionName": "express-app-test-delete-me-dev-app",
         "MemorySize": 1024,
@@ -190,14 +190,14 @@
         "AppLogGroup"
       ]
     },
-    "AppLambdaVersionw4Y19Rp63GOj6wMA0r4GUCEIhW6u2ecfYOFGEXM1G6g": {
+    "AppLambdaVersionja4GBO1UIzZDoRjFtSkQqAl2lDzWyBGdpBxezMTHkOs": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "AppLambdaFunction"
         },
-        "CodeSha256": "zhOwxnffGlq5kkUr+wI0kKtlzY3F0HQqamymFKkIcew="
+        "CodeSha256": "UVKXGpJzAbnp1jinOTESTp6X2mbFVJxA2TaY3nvsc+I="
       }
     },
     "ApiGatewayRestApi": {
@@ -322,7 +322,7 @@
         "AppLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1725881939248": {
+    "ApiGatewayDeployment1725884865586": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -385,7 +385,7 @@
     "AppLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "AppLambdaVersionw4Y19Rp63GOj6wMA0r4GUCEIhW6u2ecfYOFGEXM1G6g"
+        "Ref": "AppLambdaVersionja4GBO1UIzZDoRjFtSkQqAl2lDzWyBGdpBxezMTHkOs"
       },
       "Export": {
         "Name": "sls-express-app-test-delete-me-dev-AppLambdaFunctionQualifiedArn"

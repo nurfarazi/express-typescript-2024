@@ -191,9 +191,9 @@
                   "S3Bucket": {
                     "Ref": "ServerlessDeploymentBucket"
                   },
-                  "S3Key": "serverless/express-app-test-delete-me/dev/1725881940100-2024-09-09T11:39:00.100Z/express-app-test-delete-me.zip"
+                  "S3Key": "serverless/express-app-test-delete-me/dev/1725884866459-2024-09-09T12:27:46.459Z/express-app-test-delete-me.zip"
                 },
-                "Handler": "dist/lambda.handler",
+                "Handler": "dist/server.handler",
                 "Runtime": "nodejs20.x",
                 "FunctionName": "express-app-test-delete-me-dev-app",
                 "MemorySize": 1024,
@@ -219,14 +219,14 @@
                 "AppLogGroup"
               ]
             },
-            "AppLambdaVersionw4Y19Rp63GOj6wMA0r4GUCEIhW6u2ecfYOFGEXM1G6g": {
+            "AppLambdaVersionja4GBO1UIzZDoRjFtSkQqAl2lDzWyBGdpBxezMTHkOs": {
               "Type": "AWS::Lambda::Version",
               "DeletionPolicy": "Retain",
               "Properties": {
                 "FunctionName": {
                   "Ref": "AppLambdaFunction"
                 },
-                "CodeSha256": "zhOwxnffGlq5kkUr+wI0kKtlzY3F0HQqamymFKkIcew="
+                "CodeSha256": "UVKXGpJzAbnp1jinOTESTp6X2mbFVJxA2TaY3nvsc+I="
               }
             },
             "ApiGatewayRestApi": {
@@ -351,7 +351,7 @@
                 "AppLambdaPermissionApiGateway"
               ]
             },
-            "ApiGatewayDeployment1725881939248": {
+            "ApiGatewayDeployment1725884865586": {
               "Type": "AWS::ApiGateway::Deployment",
               "Properties": {
                 "RestApiId": {
@@ -414,7 +414,7 @@
             "AppLambdaFunctionQualifiedArn": {
               "Description": "Current Lambda function version",
               "Value": {
-                "Ref": "AppLambdaVersionw4Y19Rp63GOj6wMA0r4GUCEIhW6u2ecfYOFGEXM1G6g"
+                "Ref": "AppLambdaVersionja4GBO1UIzZDoRjFtSkQqAl2lDzWyBGdpBxezMTHkOs"
               },
               "Export": {
                 "Name": "sls-express-app-test-delete-me-dev-AppLambdaFunctionQualifiedArn"
@@ -534,7 +534,7 @@
       },
       "functions": {
         "app": {
-          "handler": "dist/lambda.handler",
+          "handler": "dist/server.handler",
           "events": [
             {
               "http": {
@@ -557,7 +557,7 @@
           "timeout": 6,
           "runtime": "nodejs20.x",
           "vpc": {},
-          "versionLogicalId": "AppLambdaVersionw4Y19Rp63GOj6wMA0r4GUCEIhW6u2ecfYOFGEXM1G6g"
+          "versionLogicalId": "AppLambdaVersionja4GBO1UIzZDoRjFtSkQqAl2lDzWyBGdpBxezMTHkOs"
         }
       },
       "package": {
@@ -569,13 +569,13 @@
         ],
         "artifactsS3KeyDirname": "serverless/express-app-test-delete-me/dev/code-artifacts",
         "artifact": "D:\\git\\odyssey\\virus-shield\\express-typescript-2024\\.serverless\\express-app-test-delete-me.zip",
-        "artifactDirectoryName": "serverless/express-app-test-delete-me/dev/1725881940100-2024-09-09T11:39:00.100Z"
+        "artifactDirectoryName": "serverless/express-app-test-delete-me/dev/1725884866459-2024-09-09T12:27:46.459Z"
       },
       "plugins": [
         "serverless-offline"
       ]
     },
-    "serviceRawFile": "service: express-app-test-delete-me\n\nprovider:\n  name: aws\n  stage: dev\n  runtime: nodejs20.x\n  region: us-east-2\n  environment:\n    NODE_ENV: production\n    PORT: 8080\n    HOST: localhost\n    CORS_ORIGIN: \"http://localhost:*\"\n    COMMON_RATE_LIMIT_WINDOW_MS: 1000\n    COMMON_RATE_LIMIT_MAX_REQUESTS: 200\n\nfunctions:\n  app:\n    handler: dist/lambda.handler\n    events:\n      - http:\n          path: /\n          method: any\n      - http:\n          path: /{proxy+}\n          method: any\n\npackage:\n  include:\n    - dist/**\n  exclude:\n    - node_modules/**\n\nplugins:\n  - serverless-offline\n",
+    "serviceRawFile": "service: express-app-test-delete-me\r\n\r\nprovider:\r\n  name: aws\r\n  stage: dev\r\n  runtime: nodejs20.x\r\n  region: us-east-2\r\n  environment:\r\n    NODE_ENV: production\r\n    PORT: 8080\r\n    HOST: localhost\r\n    CORS_ORIGIN: \"http://localhost:*\"\r\n    COMMON_RATE_LIMIT_WINDOW_MS: 1000\r\n    COMMON_RATE_LIMIT_MAX_REQUESTS: 200\r\n\r\nfunctions:\r\n  app:\r\n    handler: dist/server.handler\r\n    events:\r\n      - http:\r\n          path: /\r\n          method: any\r\n      - http:\r\n          path: /{proxy+}\r\n          method: any\r\n\r\npackage:\r\n  include:\r\n    - dist/**\r\n  exclude:\r\n    - node_modules/**\r\n\r\nplugins:\r\n  - serverless-offline\r\n",
     "command": [
       "deploy"
     ],
@@ -608,12 +608,12 @@
     "integrations": {},
     "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-2:882085502174:stack/express-app-test-delete-me-dev/17a917e0-6e88-11ef-91a6-0a974946fdc1",
     "serviceProviderAwsCfStackCreated": "2024-09-09T08:47:06.395Z",
-    "serviceProviderAwsCfStackUpdated": "2024-09-09T11:39:29.197Z",
+    "serviceProviderAwsCfStackUpdated": "2024-09-09T12:28:15.245Z",
     "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
     "serviceProviderAwsCfStackOutputs": [
       {
         "OutputKey": "AppLambdaFunctionQualifiedArn",
-        "OutputValue": "arn:aws:lambda:us-east-2:882085502174:function:express-app-test-delete-me-dev-app:9",
+        "OutputValue": "arn:aws:lambda:us-east-2:882085502174:function:express-app-test-delete-me-dev-app:12",
         "Description": "Current Lambda function version",
         "ExportName": "sls-express-app-test-delete-me-dev-AppLambdaFunctionQualifiedArn"
       },

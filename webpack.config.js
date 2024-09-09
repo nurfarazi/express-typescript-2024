@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./src/lambda.ts",
+  entry: "./src/server.ts",
   target: "node",
   mode: "production",
   module: {
@@ -20,7 +20,7 @@ module.exports = {
     },
   },
   output: {
-    filename: "lambda.js",
+    filename: "server.js",
     path: path.resolve(__dirname, "dist"),
     libraryTarget: "commonjs2",
   },

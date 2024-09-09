@@ -19,7 +19,7 @@
 // process.on("SIGTERM", onCloseSignal);
 
 import { env } from "@/common/utils/envConfig";
-import { handler } from "@/lambda";
+import { handler } from "@/server";
 
 // You can still use the logger if needed for other purposes
 import { pino } from "pino";
