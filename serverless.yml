@@ -1,0 +1,34 @@
+service: express-app-test-delete-me
+
+provider:
+  name: aws
+  stage: dev
+  runtime: nodejs20.x
+  region: us-east-2
+  environment:
+    NODE_ENV: production
+    PORT: 8080
+    HOST: localhost
+    CORS_ORIGIN: "http://localhost:*"
+    COMMON_RATE_LIMIT_WINDOW_MS: 1000
+    COMMON_RATE_LIMIT_MAX_REQUESTS: 200
+
+functions:
+  app:
+    handler: dist/lambda.handler
+    events:
+      - http:
+          path: /
+          method: any
+      - http:
+          path: /{proxy+}
+          method: any
+
+package:
+  include:
+    - dist/**
+  exclude:
+    - node_modules/**
+
+plugins:
+  - serverless-offline

@@ -21,7 +21,7 @@ app.set("trust proxy", true);
 // Middlewares
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({ origin: env.CORS_ORIGIN, credentials: true }));
+app.use(cors());
 app.use(helmet());
 app.use(rateLimiter);
 
@@ -38,5 +38,5 @@ app.use(openAPIRouter);
 // Error handlers
 app.use(errorHandler());
 
-export { app, logger };
-// export const handler = serverless(app);
+// export { app, logger };
+export const handler = serverless(app);
